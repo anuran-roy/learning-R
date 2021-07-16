@@ -1,0 +1,46 @@
+# Viva Q1
+
+x1 <- c(1, 86, 60, 44, 10);
+x2 <- c(2, 40, 33, 25, 2);        
+x3 <- c(3, 84, 64, 49, 11);
+x4 <- c(4, 40, 33, 25, 8);
+
+tbl <- rbind(x1,x2,x3,x4);
+tbl
+colnames(tbl) <- c("Tests", "Below average", "Average", "Above Average",  "Genius");
+rownames(tbl) <- c("", "", "", "")
+
+# Viva Q2
+
+x1 <- c(86, 60, 44, 10);
+x2 <- c(40, 33, 25, 2);        
+x3 <- c(84, 64, 49, 11);
+x4 <- c(40, 33, 25, 8);
+
+tbl <- rbind(x1,x2,x3,x4);
+tbl
+colnames(tbl) <- c("Below average", "Average", "Above Average",  "Genius");
+rownames(tbl) <- c("1", "2", "3", "4")
+
+slices <- colSums(tbl) #/sum(colSums(tbl))*100
+labels2 <- paste(labels, " (", slices, ")", sep = "")
+
+pie(colSums(tbl), main="Pie chart by type of person", labels = labels2)
+
+pie(rowSums(tbl), labels = paste(c("Test 1", "Test 2", "Test 3", "Test 4"), " (", rowSums(tbl), ")", sep=""), main="Pie chart by number of students tested in each test")
+
+# Viva Q3
+
+curve(25*x^2 + 2*x + 10, -50, 50)
+
+# Viva Q4
+
+v<- 0:15
+for (val in v){
+  print(choose(15, val))
+}
+
+# Viva Q5
+
+x <- 0:50;
+plot(x, dbinom(x, size=50, prob=.33),type='h')

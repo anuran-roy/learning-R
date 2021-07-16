@@ -1,0 +1,43 @@
+# Assessment 4 Q1.
+
+# x <- 3.47
+# m <- 3.23
+# sdev <- 2.31
+# print("H0 = it CANNOT be reasonably regarded as a simple sample from a population")
+# print("H1 = it CAN be reasonably regarded as a simple sample from a population")
+# print("Mean of distribution = ")
+# print(m)
+# print("Standard deviation of distribution = ")
+# print(sdev)
+# print("Confidence that the alternate hypothesis lies within critical region = ")
+# print(pnorm(x, mean=m, sd=sdev, lower.tail = TRUE)*100)
+# print("Hence we can reject H0 and accept H1")
+
+# Assessment 4 Q2
+
+print("Let H0 = the boys are NOT performing better than girls on the basis of average mark")
+print("Let H1 = the boys are performing better than girls on the basis of average mark")
+
+alpha <- 0.01
+
+z_tab <- qnorm(1-alpha)
+print("Z (tabulated) at 99% significance (i.e, alpha = 1%) = ")
+print(z_tab)
+
+x1 <- 72
+sdev1 <- 8
+
+x2 <- 70
+sdev2 <- 6
+
+n1 <- 32
+n2 <- 36
+
+z_cal <- (x1-x2)/sqrt((sdev1^2/n1 + sdev2^2/n2))
+print("Z (calculated) =")
+print(z_cal)
+z_tab <- qnorm(1 - alpha)
+print("Since z(cal) < z(tab), we assume that H0 is correct")
+
+# Assignment 4 Q3
+

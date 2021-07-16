@@ -1,0 +1,22 @@
+gdp_growth_rate <- c(5.46,6.39,7.41,8.0,8.26,7.04,6.12,4.18)
+shutdown <- c(3,5,6,14,31,79,134,106)
+positn <- 1:8
+# preventive_shutdown <- c(2,2,5,7,12,61,67,72)
+test <- cor(gdp_growth_rate, shutdown, method = c("pearson"))
+test
+plot(gdp_growth_rate ~ preventive_shutdown) # shutdown)
+library(readxl)
+words <- read_excel("/home/anuran/Desktop/CNPRsurvey/CNPR-Proj1.xlsx")
+View(words)
+
+
+reg <- lm(positn ~ shutdown)
+reg
+summary(reg)
+pred1 <- predict(reg, data.frame(positn = 9))
+pred1
+coeffs <- coefficients(reg)
+coeffs[1]+coeffs[2]*100
+reg2 <- lm(shutdown ~ gdp_growth_rate)
+predict(reg2, data.frame(shutdown =   ))
+summary(reg2)

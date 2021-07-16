@@ -1,0 +1,38 @@
+library(plyr)
+library(dplyr)
+
+data <-
+  read.csv("../Datasets/Lesson 8_Classification/Demo 1_ Support Vector Machines.csv")
+count(data$Churn)
+str(data)
+
+data$Churn <- sapply(data$Churn, factor)
+
+sample_split <- floor(0.7 * nrow(data))
+set.seed(1)
+
+training <- sample(seq_len(nrow(data)), size = sample_split)
+View(training)
+train_dataset <- data[training, ]
+View(train_dataset)
+
+# Building an SVM
+
+library(e1071) # SVM Library
+library(caret) # Classification And REgression Training library
+
+svm_data <-
+  svm(Churn ~ ., train_dataset) # Train SVM based on column "Churn" w.r.t all other columns, taking data from "train_dataset"
+confusionMatrix(train_dataset$Churn, predict(svm_data), positive = '1')
+
+# generate test data
+
+test_dataset <- data[-training,]
+View(test_dataset)
+
+prediction <- predict(svm_data, test_dataset)
+str(prediction)
+
+
+confusionMatrix(test_dataset$Churn, prediction, positive = '1')
+? tune

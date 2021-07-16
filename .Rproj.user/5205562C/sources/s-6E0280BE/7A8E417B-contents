@@ -1,0 +1,12 @@
+##################################
+# Implementing Apriori Algorithm #
+##################################
+library(arules)
+
+groceries <- read.transactions("../Datasets/Lesson 10_Association/Demo 1_Perform Association Using the Apriori Algorithm .csv", sep=",")
+inspect(groceries[1:10])
+apriori_groc <- apriori(groceries, parameter = list(support=0.01, confidence = 0.5))
+
+summary(apriori_groc)
+inspect(apriori_groc)
+inspect(sort(apriori_groc, by="confidence"))

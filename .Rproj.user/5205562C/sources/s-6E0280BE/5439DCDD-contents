@@ -1,0 +1,48 @@
+# # Question 1
+# 
+# iq <- c(70, 120, 110, 101, 88, 83, 95, 98, 107, 100)
+# m <- 100
+# 
+# print(t.test(iq, mu=m))
+# 
+# print("From here we see that m lies in the confidence interval, we can tell the data supports the hypothesis that the mean IQ is 100 at 5% level of significance")
+
+#Question 2
+
+# print("Let H0 = the soldiers are shorter than the sailors on the basis of average height")
+# print("Let H1 = the soldiers are taller than the sailors on the basis of average height")
+# h1 <- 166.9
+# sd1 <- 8.29
+# n1 <- 8
+# h2 <- 170.3
+# sd2 <- 8.50
+# n2 <- 6
+# z <- (h1 - h2)/(sqrt(n1*sd2^2 + n2*sd1^2)/n1*n2)
+# a <- sqrt(n1*sd2^2 + n2*sd1^2)/sqrt(n1*n2)
+# z <- (h1 - h2)/a
+# print("z(calculated) =")
+# print(z)
+# print("At 5% significance, z(tabulated) = 1.96")
+# print("Since |z(calculated)| < z(tabulated), hence H1 is correct. So soldiers are taller than sailors")
+
+# Question 3
+
+d1 <- c(21, 24, 25, 26, 27)
+m1 <- mean(d1)
+d2 <- c(22, 27, 28, 30, 31, 36)
+m2 <- mean(d2)
+
+a <- sum(d1 - m1)
+b <- sum(d2 - m2)
+
+n1 <- 5
+n2 <- 6
+
+sd1 = sqrt(abs(a/(n1-1)))
+print("Variance in case of population sample 1=")
+print(sd1^2)
+sd2 = sqrt(b/(n2-1))
+print("Variance in case of population sample 2=")
+print(sd2^2)
+
+print("From this, both populations have same variance at 5% significance value (ignoring some minor computational differences)")

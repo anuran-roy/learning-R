@@ -1,0 +1,46 @@
+# Question 1
+
+# print("Let H1 = there is an association between gender and attitude 5 % level of significance")
+# print("Let H0 = there is NO association between gender and attitude 5 % level of significance")
+# male <- c(1154, 475, 243)
+# female <- c(1103, 442, 342)
+# 
+# fav <- c(1154, 1103)
+# opp <- c(475, 442)
+# und <- c(243, 342)
+# 
+# tot <- sum(male) + sum(female)
+# 
+# val <- chisq.test(rbind(male, female))
+# print(val)
+# print("Here we see that p-value < 0.05. Hence we can conclude that H1 is correct.")
+
+# Question 2
+
+t1 <- c(70, 72, 75, 80, 83, NaN, NaN)
+t2 <- c(60, 65, 57, 84, 87, 73, NaN)
+t3 <- c(100, 110, 108, 112, 113, 120, 107)
+
+print("Let H0 = the breaking strengths of the ropes DON'T differ significantly at 5 % level of significance")
+print("Let H1 = the breaking strengths of the ropes differ significantly at 5 % level of significance")
+
+med = 80
+
+ct1 <- t1 - med
+ct2 <- t2 - med
+ct3 <- t3 - med
+
+G <- sum(ct1) + sum(ct2) + sum(ct3)
+
+cf <- G^2/(length(t1)+length(t2)+length(t3))
+
+r2 <- 7992 - cf
+ssw <-r2 -5838.44 
+print("F-Value from given distribution =")
+f <- 2921.22/75.07
+print(f)
+print("F (tabulated) at (2,15) at 5% level of significance is 3.68")
+print("Since F(tabulated) < F(calculated), we reject H0 and accept H1")
+
+# Question 3
+
